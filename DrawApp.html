@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "DrawApp.css">
+    <title> Program de Desenare </title>
+   
+</head>
+<body>
+   
+    <h1>Program de desenare</h1>
+
+    <div class="formaSelectata">
+        
+        <!-- butoane pentru forme -->
+        <button type="button" class="tools forme" id="cerc" onclick="Cerc()">Cerc</button>
+        <button type="button" class="tools forme" onclick="Patrat()" id="patrat">Pătrat</button>
+        <button type="button" class="tools forme" onclick="Elipsa()" id="elipsa">Elipsa</button>
+        <button type="button" class="tools forme" onclick="Linie()" id="linie">Linie dreaptă</button>
+    </div>
+
+      
+
+    <div class="toolbar">
+        <!-- butoane pentru desenare libera, schimbare culoare, grosime stroke, setare culoare fundal -->
+        <button type="button" class="tools" onclick="Creion()" id="creion">Creion</button>
+        <button type="button" id="grosimeStr" class="tools">Grosime stroke</button>
+
+        <button type="button" class="tools" onclick="selecteazaCuloare()">Culoare</button>
+        <input type="color" id="culoare1" style="display: none;">
+
+        <button type="button" class="tools" onclick="fundal()">Culoare fundal</button>
+        <input type="color" id="culoare2" style="display: none;" >
+
+    </div>
+
+    <div class="actiuniCanvas">
+        <!-- butoane pentru stergerea canvasului, undo, salvare png si svg -->
+        <button onclick="sterge()" type="button" class="tools actiuni">Șterge</button>
+        <button onclick="undo()" type="button" class="tools actiuni">Undo</button>
+        <button onclick="saveAs()" type="button" class="tools actiuni saveAS">Salveaza PNG</button>
+        <button onclick="saveSVG()" type="button" class="tools actiuni saveSVG">Salveaza SVG</button>
+    </div>    
+    
+
+    <canvas id="canvas" class="canvas"></canvas>
+
+    <svg width="1200" height="500"></svg>
+
+    <script src = "DrawApp.js" width="100" height="100"></script>
+</body>
+</html>
